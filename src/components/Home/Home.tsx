@@ -11,7 +11,12 @@ const styles = makeStyles({
     }
 });
 
-const Home = () => {
+type HomeProps = {
+    setHome(home: string): void
+};
+
+const Home = ({ setHome }: HomeProps) => {
+    console.log(setHome);
     const [text, setText] = useState("");
     const [disabledText, setDisabledText] = useState("");
     const classes = styles();
@@ -22,7 +27,7 @@ const Home = () => {
         <div className={classes.container} data-tid="container">
             <h2>Home</h2>
             <div>
-                <TextField 
+                <TextField
                     value={text}
                     onChange={handleChange(setText)}
                 />
@@ -35,7 +40,10 @@ const Home = () => {
             </div>
             <Button
                 variant="outlined"
-                onClick={() => setDisabledText(text)}
+                onClick={() => {
+                    setDisabledText(text);
+                    setHome(text);
+                }}
             >
                 Hello worlds!
             </Button>
