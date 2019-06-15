@@ -1,11 +1,15 @@
 import { connect } from "react-redux";
+import { Dispatch } from "redux";
 import Home from "./Home";
-import { setHome } from "../../actions";
+import { setHome, HomeActions } from "../../actions";
+import { ApplicationState } from "../../reducers";
 
-console.log(setHome);
+const mapStateToProps = (state: ApplicationState) => ({
+    home: state.home.home
+});
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch<HomeActions>) => ({
     setHome: home => dispatch(setHome(home))
 });
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

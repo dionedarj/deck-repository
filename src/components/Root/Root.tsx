@@ -3,7 +3,7 @@ import { hot } from "react-hot-loader/root";
 import React from "react";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
-import { Store } from "../../reducers/types";
+import { Store } from "redux";
 import Routes from "../../Routes";
 
 type Props = {

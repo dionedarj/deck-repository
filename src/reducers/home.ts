@@ -1,11 +1,16 @@
-import { SET_HOME } from "../actions/types";
+import { Reducer } from "redux";
+import { SET_HOME, HomeActions } from "../actions/types";
 
-const initialState = {
+export type HomeState = {
+    home: string
+};
+
+const initialState: HomeState = {
     home: ""
 };
 
-const home = (state = initialState, action) => {
-    switch (action.type) {
+const reducer: Reducer<HomeState, HomeActions> = (state: HomeState = initialState, action) => {
+    switch ((action as HomeActions).type) {
     case SET_HOME:
         return {
             ...state,
@@ -16,4 +21,4 @@ const home = (state = initialState, action) => {
     }
 };
 
-export default home;
+export default reducer;

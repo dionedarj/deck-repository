@@ -1,9 +1,10 @@
-export const SET_HOME = "SET_HOME";
-export const SET_POOP = "SET_POOP";
+import { Action } from "redux";
 
-export type Action = {
-    type: string;
-    payload?: any;
-    meta?: any;
-    error?: boolean;
-};
+export const SET_HOME = "SET_HOME";
+
+export interface SetHomeAction extends Action {
+    type: typeof SET_HOME,
+    payload: string
+}
+
+export type HomeActions = SetHomeAction;
