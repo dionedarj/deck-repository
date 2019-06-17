@@ -4,10 +4,6 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/styles";
 
-const { remote } = require("electron");
-
-const { dialog } = remote;
-
 const styles = makeStyles({
     container: {
         top: "30%",
@@ -19,7 +15,6 @@ type HomeProps = {
     setHome(home: string): void,
     home: string
 };
-
 
 const handleChange = setFunction => event => setFunction(event.target.value);
 
