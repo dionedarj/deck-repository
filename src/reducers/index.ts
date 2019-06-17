@@ -1,11 +1,17 @@
 
-import { combineReducers } from "redux";
-import { connectRouter } from "connected-react-router";
-import counter from "./counter";
+import { combineReducers, Reducer } from "redux";
+import { connectRouter, RouterState } from "connected-react-router";
+import { History } from "history";
+import homeReducer, { HomeState } from "./home";
 
-export default function createRootReducer(history: History) {
-    return combineReducers({
+export interface ApplicationState {
+    router: RouterState,
+    home: HomeState
+}
+
+export default function createRootReducer(history: History): Reducer<ApplicationState> {
+    return combineReducers<ApplicationState>({
         router: connectRouter(history),
-        counter
+        home: homeReducer
     });
 }

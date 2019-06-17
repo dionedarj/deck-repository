@@ -35,10 +35,12 @@
             4
         ],
         "jsx-a11y/anchor-is-valid": "off",
+        "no-alert": "off",
         "no-console": "off",
         "no-unused-vars": "off",
         "no-use-before-define": "off",
         "no-multi-assign": "off",
+        "no-trailing-spaces": "error",
         "promise/param-names": "error",
         "promise/always-return": "error",
         "promise/catch-or-return": "error",
